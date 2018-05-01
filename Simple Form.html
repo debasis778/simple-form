@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Oinky portal</title>
+    <link rel="stylesheet" href="https://bootswatch.com/3/darkly/bootstrap.min.css">
+    <link rel="stylesheet" href="https://bootswatch.com/3/darkly/bootstrap.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://unpkg.com/scrollreveal/dist/scrollreveal.min.js"></script>
+
+</head>
+<body>
+    <div class="container">
+        <br>
+        <br>
+        <br>
+        <h1 id="head" style="text-align:center; color:blueviolet">Welcome to X-Company Portal</h1>
+        <br>
+        <br>
+        <div class="jumbotron">
+            <div class="row">
+                <div class="col-md-6 col-lg-6 col-sm-12 col-xs-12" >
+                    <div class="panel panel-primary" id="log" >
+                        <div class="panel-heading">
+                            Login
+                        </div>
+                        <div class="panel-body">
+                            <form action="#" name="form1">
+                                <div class="form-group">
+                                        <label for="username">Username:</label>
+                                        <input type="text" class="form-control" id="username" placeholder="Enter Username" name="username" required>  
+                                </div>
+                                <div class="form-group">
+                                        <label for="password">Password:</label>
+                                        <input type="password" class="form-control" id="password" placeholder="Enter password" name="password" required>
+                                        
+                                </div>
+                                <button type="submit" class="btn btn-success btn-md" >Login</button>
+                            </form>
+
+                        </div>
+                        <div class="panel-footer">
+                            <p>Forgot Password?<button class="btn btn-warning btn-sm" id="reg2" type="button">Click me</button></p>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col-md-6 col-lg-6 col-sm-12 col-xs-12">
+                        <div class="panel panel-primary"  id="log2"  >
+                            <div class="panel-heading">
+                                New User
+                            </div>
+                            <div class="panel-body">
+                                <form action="#" name="form2">
+                                    <div class="form-group">
+                                            <label for="fname">Full Name:</label>
+                                            <input type="text" class="form-control" id="fname" placeholder="Enter Name" name="fname" required>  
+                                    </div>
+                                    <div class="form-group">
+                                            <label for="username">Username:</label>
+                                            <input type="text" class="form-control" id="username" placeholder="Enter Username" name="username" required>  
+                                    </div>
+                                    <div class="form-group">
+                                            <label for="password">Password:</label>
+                                            <input type="password" class="form-control" id="password" placeholder="Enter password" name="password" required>
+                                            
+                                    </div>
+                                    <button type="submit" class="btn btn-success btn-md" onclick="CheckDetails(document.form2.fname, document.form2.username, document.form2.password)">Register</button>
+                                </form>
+    
+                            </div>
+                            <div class="panel-footer">
+                                <h6 ><mark>Note:</mark>username must be alphanumeric. <br>
+                                    Full name must contain only alphabets. <br>
+                                    password must conatin atleast one number, one alphabet and special characters(8-15).
+                                </h6>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+        </div>
+
+    </div>
+    <script>
+        window.sr=ScrollReveal();
+        sr.reveal('#head',{
+            duration:2000,
+            origin:'top',
+            distance:'50px'
+        });
+        sr.reveal('#log',{
+
+            duration:2000,
+            delay:2000,
+            origin:'left',
+            distance:'300px'
+        });
+
+        sr.reveal('#log2',{
+
+            duration:2000,
+            delay:3000,
+            origin:'right',
+            distance:'300px'
+        });
+    </script>
+
+    <script>
+            function CheckDetails(name, username, password)   
+            {   
+            var pass = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[$@$!%*#?&])[A-Za-z\d$@$!%*#?&]{8,}$/;
+            var fname=/^[a-zA-Z ]*$/;
+            var uname=/^(?=.*[0-9])(?=.*[a-zA-Z])([a-zA-Z0-9]+)$/;
+            if((username.value.match(uname)) && (name.value.match(fname)) && (password.value.match(pass)) )  
+            {   
+            alert('Registered Successfully!!!')  
+            return true;  
+            }  
+            else  
+            {   
+            alert('Enter Details Properly')  
+            return false;  
+            }  
+            }  
+    </script>
+
+
+
+    
+</body>
+</html>
